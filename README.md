@@ -76,10 +76,12 @@ Encrypted packet (len=xxx)
 
 No payload or command content is visible.
 
-📸 Screenshots
-1. SSH Handshake Packet in Wireshark
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
-Wireshark displaying the SSHv2 handshake, including algorithm negotiation and key exchange initialization.
+## 📸 Screenshots
+
+### SSH Handshake Packet in Wireshark
+![SSH Handshake](screenshots/ssh_handshake.png)
+
+*Wireshark displaying the SSHv2 handshake, including algorithm negotiation and key exchange initialization.*
 
 🛡️ Security Implications
 - SSH traffic cannot be decrypted due to ephemeral key exchange
