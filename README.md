@@ -33,9 +33,12 @@ This lab reinforces core concepts in encryption, confidentiality, and secure pro
 
 🖧 Architecture Diagram
 
+```mermaid
 flowchart LR
     W[Windows Host<br>Wireshark Analysis] -->|Host‑Only Network| K[Kali Linux<br>tcpdump Capture]
     K <--> U[Ubuntu Server<br>OpenSSH Server]
+```
+
 
 
 
@@ -45,13 +48,15 @@ flowchart LR
 - OpenSSH – SSH server on Ubuntu
 - VirtualBox – Virtualized lab environment
 
-📡 Packet Capture with tcpdump
+## 📡 Packet Capture with tcpdump
 
 SSH traffic was captured on the Kali Linux client using:
+
+```bash
 sudo tcpdump -i eth0 -w ssh_capture.pcap port 22
+```
 
-
-This command captures all SSH packets on port 22 and writes them to a .pcap file for later analysis in Wireshark.
+This command captures all SSH packets on port 22 and writes them to a `.pcap` file for later analysis in Wireshark.
 
 🔍 SSH Traffic Analysis in Wireshark
 1. Protocol Negotiation (KEXINIT)
@@ -71,10 +76,14 @@ The client and server generate a shared secret using ephemeral keys, ensuring:
 The server sends its public host key, which the client verifies to prevent MITM attacks.
 
 4. Encrypted Session Begins
-After the handshake completes, all traffic becomes encrypted.
-Wireshark displays packets as:
-Encrypted packet (len=xxx)
 
+After the handshake completes, all traffic becomes encrypted.
+
+Wireshark displays packets as:
+
+```
+Encrypted packet (len=xxx)
+```
 
 No payload or command content is visible.
 
