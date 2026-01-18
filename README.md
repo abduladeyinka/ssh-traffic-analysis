@@ -32,6 +32,7 @@ This lab reinforces core concepts in encryption, confidentiality, and secure pro
 - How to build a controlled homelab for protocol analysis
 
 🖧 Architecture Diagram
+
 flowchart LR
     W[Windows Host<br>Wireshark Analysis] -->|Host‑Only Network| K[Kali Linux<br>tcpdump Capture]
     K <--> U[Ubuntu Server<br>OpenSSH Server]
@@ -45,6 +46,7 @@ flowchart LR
 - VirtualBox – Virtualized lab environment
 
 📡 Packet Capture with tcpdump
+
 SSH traffic was captured on the Kali Linux client using:
 sudo tcpdump -i eth0 -w ssh_capture.pcap port 22
 
